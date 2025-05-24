@@ -57,6 +57,7 @@ export default tseslint.config(
           message:     'Use typed hooks `useAppDispatch` and `useAppSelector` instead.'
         }
       ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 
       '@stylistic/array-bracket-spacing':          ['error', 'never'],
       '@stylistic/arrow-parens':                   'error',

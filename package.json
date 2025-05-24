@@ -10,11 +10,14 @@
   },
   "scripts": {
     "test": "ts-node ./src/terminal/install.ts",
-    "build": "node ./src/scripts/smart-build.js ."
+    "build": "node ./scripts/run-build.js",
+    "lint": "node ./scripts/run-lint.js",
+    "apply-terminal-setup": "npm run build && node ./build/terminal/set-up.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "@stylistic/eslint-plugin": "^4.2.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.27.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-hooks": "^5.2.0",

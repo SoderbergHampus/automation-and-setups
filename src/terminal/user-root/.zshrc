@@ -134,3 +134,6 @@ conda activate dev
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add custom functions
+source ./custom-zsh/bash-functions.sh
