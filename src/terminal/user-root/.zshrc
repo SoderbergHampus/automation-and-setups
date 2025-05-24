@@ -136,4 +136,4 @@ conda activate dev
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Add custom functions
-source ./custom-zsh/bash-functions.sh
+source ~/custom-zsh/bash-functions.sh

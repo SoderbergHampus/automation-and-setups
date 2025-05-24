@@ -1,4 +1,3 @@
-
 /*
  * Colors
  */
@@ -24,10 +23,16 @@ const DIVIDER_LENGTH = 80;
 const SECTION_DIVIDER = '='.repeat(DIVIDER_LENGTH);
 const SUBSECTION_DIVIDER = '\n' + '-'.repeat(DIVIDER_LENGTH) + '\n';
 
+/**
+ * @param { string } msg
+ */
 const success = (msg) => {
   console.info(FG_GREEN, msg, RESET);
 };
 
+/**
+ * @param { string } msg
+ */
 const sectionSuccess = (msg) => {
   console.info(
     FG_GREEN,
@@ -42,14 +47,23 @@ const sectionSuccess = (msg) => {
   );
 };
 
+/**
+ * @param { string } msg
+ */
 const info = (msg) => {
   console.info(msg);
 };
 
+/**
+ * @param { string } msg
+ */
 const log = (msg) => {
   console.log(msg);
 };
 
+/**
+ * @param { string } msg
+ */
 const section = (msg) => {
   console.info(
     FG_CYAN,
@@ -64,14 +78,23 @@ const section = (msg) => {
   );
 };
 
+/**
+ * @param { string } msg
+ */
 const subSection = (msg) => {
   console.info(FG_CYAN, SUBSECTION_DIVIDER, msg, '\n', RESET);
 };
 
+/**
+ * @param { string } msg
+ */
 const error = (msg) => {
   console.error(FG_RED, msg, RESET);
 };
 
+/**
+ * @param { string } msg
+ */
 const warn = (msg) => {
   console.error(FG_YELLOW, msg, RESET);
 };

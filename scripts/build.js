@@ -64,12 +64,12 @@ export const getPrevHash = async () => {
   return new Promise((resolve, reject) => {
     if (!existsSync(HASH_LOCATION)) {
       resolve(undefined);
+    } else {
+      readFile(HASH_LOCATION, (err, data) => {
+        if (err) reject(err);
+        resolve(data.toLocaleString());
+      });
     }
-
-    readFile(HASH_LOCATION, (err, data) => {
-      if (err) reject(err);
-      resolve(data.toLocaleString());
-    });
   });
 };
 
@@ -89,7 +89,7 @@ export const runBuild = async () => {
   });
 
   const copyShPromise = new Promise((resolve) => {
-    const copyfiles = spawn('copyfiles', ['-u', '1', '"src/**/*.@(sh)"', '"build"'], {
+    const copyfiles = spawn('copyfiles', ['-u', '1', '"src/**/*.@(sh)"', 'build'], {
       stdio: 'inherit',
       shell: true
     });

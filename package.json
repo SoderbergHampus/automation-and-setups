@@ -9,7 +9,6 @@
     "node": "22.16.0"
   },
   "scripts": {
-    "test": "ts-node ./src/terminal/install.ts",
     "build": "node ./scripts/run-build.js",
     "lint": "node ./scripts/run-lint.js",
     "apply-terminal-setup": "npm run build && node ./build/terminal/set-up.js"
