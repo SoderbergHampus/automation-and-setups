@@ -78,7 +78,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+zstyle :omz:plugins:ssh-agent use-askpass no
+
+plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,6 +139,12 @@ conda activate dev
 
 # Add custom functions
 source ~/custom-zsh/bash-functions.sh
+
+# Key-chain
+if [[ -z "$SSH_AUTH_SOCK" ]] || ! pgrep -u "$USER" ssh-agent >/dev/null; then
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+fi
 
 # Syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
