@@ -137,3 +137,6 @@ conda activate dev
 
 # Add custom functions
 source ~/custom-zsh/bash-functions.sh
+
+# Syntax highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
